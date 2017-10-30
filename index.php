@@ -51,20 +51,20 @@ if(isset($_SESSION['userid'])){
             <div class="card-columns">
                  <div class="card">
                     <div class="card-body" align="center">
-                        <h4 class="card-title"><img src="https://vignette.wikia.nocookie.net/craptendo/images/9/9a/Community_icon.png/revision/latest?cb=20150210170144" width="75px" height="75px"><br></br><small class="text-muted"><i>Imbue your child's life with a sense of community.</i></p></small>
+                        <h4 class="card-title"><img src="https://vignette.wikia.nocookie.net/craptendo/images/9/9a/Community_icon.png/revision/latest?cb=20150210170144" width="75px" height="75px"><br><br><small class="text-muted"><i>Imbue your child's life with a sense of community.</i></small>
 </h4>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-body" align="center">
-                        <h4 class="card-title"><img src="https://cdn0.iconfinder.com/data/icons/smile-emoticons/78/Emoticons_smile_smiley-16-512.png" width="75px" height="75px"><br></br><small class="text-muted"><i>Help your child have fun with new friends.</i></p></small>
+                        <h4 class="card-title"><img src="https://cdn0.iconfinder.com/data/icons/smile-emoticons/78/Emoticons_smile_smiley-16-512.png" width="75px" height="75px"><br><br><small class="text-muted"><i>Help your child have fun with new friends.</i></small>
 </h4>
                     </div>
                 </div>
                 
                 <div class="card">
                     <div class="card-body" align="center">
-                        <h4 class="card-title"><img src="http://downloadicons.net/sites/default/files/open-lock-icon-68327.png" width="75px" height="75px"><br></br><small class="text-muted"><i>Make connections in a safe and secure way.</i></p></small>
+                        <h4 class="card-title"><img src="http://downloadicons.net/sites/default/files/open-lock-icon-68327.png" width="75px" height="75px"><br><br><small class="text-muted"><i>Make connections in a safe and secure way.</i></small>
 </h4>
                     </div>
                 </div>
@@ -72,19 +72,19 @@ if(isset($_SESSION['userid'])){
                 
                 <div class="card">
                     <div class="card-body" align="center">
-                        <h4 class="card-title"><img src="https://maxcdn.icons8.com/Share/icon/nolan/weather//lightning_bolt1600.png" width="75px" height="75px"><br></br><small class="text-muted"><i>... All instantly</i></p></small>
+                        <h4 class="card-title"><img src="https://maxcdn.icons8.com/Share/icon/nolan/weather//lightning_bolt1600.png" width="75px" height="75px"><br><br><small class="text-muted"><i>... All instantly</i></small>
 </h4>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-body" align="center">
-                        <h4 class="card-title"><img src="https://cdn1.iconfinder.com/data/icons/people-network/512/9-512.png" width="75px" height="75px"><br></br><small class="text-muted"><i>Find a support network of parents just like you.</i></p></small>
+                        <h4 class="card-title"><img src="https://cdn1.iconfinder.com/data/icons/people-network/512/9-512.png" width="75px" height="75px"><br><br><small class="text-muted"><i>Find a support network of parents just like you.</i></small>
 </h4>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-body" align="center">
-                        <h4 class="card-title"><img src="http://www.iconsdb.com/icons/preview/orange/free-badge-xxl.png" width="75px" height="75px"><br></br><small class="text-muted"><i>... And all at no cost.</i></p></small>
+                        <h4 class="card-title"><img src="http://www.iconsdb.com/icons/preview/orange/free-badge-xxl.png" width="75px" height="75px"><br><br><small class="text-muted"><i>... And all at no cost.</i></small>
 </h4>
                     </div>
                 </div>
@@ -145,8 +145,11 @@ if(isset($_SESSION['userid'])){
 
                     </div>
                 </div>
-                    </div>
-                </div>
+        </div></div>
+
+ <div class="container text-center">
+        <small class="text-muted"><a href="#top">Back to Top</a></small>
+        </div>
     </body>
 </html>
 
