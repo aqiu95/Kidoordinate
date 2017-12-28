@@ -25,6 +25,7 @@ h1 {
   padding-bottom: 250px;
   margin-left: -10px;
   margin-right: -10px;
-  background-image: linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)), url("images/connectbg.jpg");
-  background-size: 1500px 1200px;
+  background-image: linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)), url("/images/connectbg.jpg");
+    background-size: cover;
 }
+

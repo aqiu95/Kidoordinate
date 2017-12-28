@@ -52,6 +52,5 @@
   padding-bottom: 250px;
   margin-left: -10px;
   margin-right: -10px;
-  background-image: linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)), url("images/regbg.jpg");
-  background-size: 1500px 1000px;
-}
+  background-image: linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)), url("/images/regbg.jpg");
+  background-size: cover;
