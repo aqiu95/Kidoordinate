@@ -30,16 +30,16 @@ include'header.php';
         <div>
             <a id="top"></a>
             <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-                <a class="navbar-brand" href="./dashboard.php">
+                <a class="navbar-brand" href="./index.php">
                     <img src="images/logo.png" style="width:25%">
                 </a>      
                 <div class="navbar-nav" id="navLinks">
-                     <a class="nav-item nav-link navbar-text navlink" href="./dashboard.php"><img src="http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/calendar-icon.png" width="35px" height="35px"></a>
-                    <a class="nav-item nav-link navbar-text navlink" href="./connect.php"><img src="https://image.flaticon.com/icons/png/128/109/109859.png" width="35px" height="35px"></a>
-                    <a class="nav-item nav-link navbar-text navlink" href="./messages.php"><img src="http://images.apusapps.com/src/icon-clear-msg-notification.png" width="35px" height="35px"></a>
-                    <a class="nav-item nav-link navbar-text navlink" href="./requests.php"><img src="https://d30y9cdsu7xlg0.cloudfront.net/png/157558-200.png" width="35px" height="35px"></a>
-                    <a class="nav-item nav-link navbar-text navlink" href="./account.php"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/OOjs_UI_icon_advanced.svg/2000px-OOjs_UI_icon_advanced.svg.png" width="35px" height="35px"></a>
-                     <a class="nav-item nav-link navbar-text navlink" href="./logout.php"><img src="https://cdn2.iconfinder.com/data/icons/large-home-icons/256/Exit_delete_close_remove_door_logout_out.png" width="35px" height="35px"></a>
+                     <a class="nav-item nav-link navbar-text navlink" href="./index.php"><img src="images/headicon1.png" width="35px" height="35px"></a>
+                    <a class="nav-item nav-link navbar-text navlink" href="./connect.php"><img src="images/headicon2.png" width="35px" height="35px"></a>
+                    <a class="nav-item nav-link navbar-text navlink" href="./messages.php"><img src="images/headicon3.png" width="35px" height="35px"></a>
+                    <a class="nav-item nav-link navbar-text navlink" href="./requests.php"><img src="images/headicon4.png" width="35px" height="35px"></a>
+                    <a class="nav-item nav-link navbar-text navlink" href="./account.php"><img src="images//headicon5.png" width="35px" height="35px"></a>
+                     <a class="nav-item nav-link navbar-text navlink" href="./logout.php"><img src="images/headicon6.png" width="35px" height="35px"></a>
                 </div>
             </nav>
         </div>
