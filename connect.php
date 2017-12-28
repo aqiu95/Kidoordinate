@@ -19,7 +19,6 @@ include'header.php';
     <link rel="icon" type="image/png" href="images/icon.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="js/app.js"></script>
     <title>Kidoordinate</title>
     </head>
     

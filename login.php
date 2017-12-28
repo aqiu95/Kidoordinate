@@ -15,7 +15,6 @@ include 'global.php';
     <link rel="icon" type="image/png" href="images/icon.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="js/app.js"></script>
     <title>Kidoordinate - Login</title>
     </head>
 
@@ -71,7 +70,6 @@ if($_POST){
     if($conn->connect_error){
         die('Connection failed!');
     }
-    
     $stmt = $conn->prepare("SELECT id, password, firstname FROM parents WHERE username = ?");
     $stmt->bind_param("s", $_POST['username']);
     $stmt->execute();
@@ -81,6 +79,15 @@ if($_POST){
         $stmt->fetch();
         //user exists, check password
         if(password_verify($_POST['password'], $passwordhash)){
+            if(password_needs_rehash($_POST['password'], PASSWORD_DEFAULT)){
+                //need to rehash and update password
+                $newPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
+                //update to database
+                $stmt2 = $conn->prepare("UPDATE parents SET password = ? WHERE username = ?");
+                $stmt2->bind_param("ss", $newPassword, $_POST['username']);
+                $stmt2->execute();
+                $stmt2->close();
+            }
             $_SESSION['userid'] = $id;
             $_SESSION['firstname'] = $firstname;
             header("Location: dashboard.php");
