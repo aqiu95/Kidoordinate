@@ -12,13 +12,13 @@
 	padding-bottom: 250px;
 	margin-left: -10px;
 	margin-right: -10px;
-	background-image: linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)), url("/images/homebg1.jpg");
+	background-image: linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.7)), url("/images/homebg1.jpg");
     background-size: cover;
 }
 
 #testimonials{
 	padding-top: 150px;
 	padding-bottom: 250px;
-	background-image: linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)), url("/images/homebg2.jpg");
+	background-image: linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.7)), url("/images/homebg2.jpg");
     background-size: cover;
 	}

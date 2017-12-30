@@ -168,7 +168,7 @@ else {
     <input type="text" id="phone" name="phone" placeholder="Phone" class="form-control" required>
       <p></p>
           <label for="aptcomplex" class="sr-only">Apartment Complex</label>
-    <input type="text" id="aptcomplex" name="aptcomplex" placeholder="Apartment complex" class="form-control" required>
+    <input type="text" id="aptcomplex" name="aptcomplex" placeholder="Apartment complex" class="form-control" onFocus="initAutocomplete()" required>
       <p></p>
           <label for="addressline1" class="sr-only">Address Line 1</label>
     <input type="text" id="addressline1" name="addressline1" placeholder="Address Line 1" class="form-control" required>
@@ -238,7 +238,7 @@ else {
       <p></p>
       
           <label for="bio" class="sr-only">Bio</label>
-          <textarea rows="4" cols="50" id="bio" name="bio" placeholder="Bio" required>
+          <textarea rows="4" cols="50" id="bio" name="bio" placeholder="Bio" class="form-control" required>
 </textarea>
           <p></p>
           <label for="addressverification" class="sr-only">Upload address verification</label>
@@ -267,3 +267,46 @@ Bio
 }
 
 ?>
+        </div></div>
+            <script>
+      var placeSearch, autocomplete;
+      var componentForm = {
+        street_number: 'short_name',
+        route: 'long_name',
+        locality: 'long_name',
+        administrative_area_level_1: 'long_name',
+        postal_code: 'short_name'
+      };
+        var formIDs = [
+            "addressline1",
+            "city",
+            "state",
+            "zip"
+        ];
+      function initAutocomplete() {
+        // Create the autocomplete object, restricting the search to geographical
+        // location types.
+        autocomplete = new google.maps.places.Autocomplete(
+            /** @type {!HTMLInputElement} */(document.getElementById('aptcomplex')),
+            {types: ['establishment']});
+
+        // When the user selects an address from the dropdown, populate the address
+        // fields in the form.
+        autocomplete.addListener('place_changed', fillInAddress);
+      }
+
+      function fillInAddress() {
+        // Get the place details from the autocomplete object.
+        var place = autocomplete.getPlace();
+
+          document.getElementById("addressline1").value = place.address_components[0].long_name + " " + place.address_components[1].long_name;
+          document.getElementById("city").value = place.address_components[2].long_name;
+          document.getElementById("state").value = place.address_components[4].short_name;
+          document.getElementById("zip").value = place.address_components[6].long_name;
+
+
+      }
+
+    </script>
+            <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6CD6noeRauhJTj6bK-PJvYXsKjzs52wk&libraries=places&callback=initAutocomplete"></script>
+    </body></html>
