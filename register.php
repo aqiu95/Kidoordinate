@@ -44,7 +44,7 @@ include 'global.php';
                     //there is submitted form data
 
                     if(!isset($_POST['confirm'])){
-                        exit('You must confirm that you are the legal guardian and that all the information is correct!');
+                        exit('<h2>You must confirm that you are the legal guardian and that all the information is correct!<h2>');
                     }
 
                     //validate all fields filled
@@ -57,7 +57,7 @@ include 'global.php';
                     }
 
                     if ($error) {
-                        exit('All fields are required.');
+                        exit('<h2>All fields are required.</h2>');
                     }
 
                     //filter fields
@@ -70,40 +70,40 @@ include 'global.php';
                     $kidbio = strip_tags(trim($_POST['kidbio']));
 
                     if(strlen($username) > 255){
-                        exit('Username is too long!');
+                        exit('<h2>Username is too long!</h2>');
                     }
 
                     if(strlen($firstname) > 255){
-                        exit('First name is too long!');
+                        exit('<h2>First name is too long!</h2>');
                     }
 
                     if(strlen($lastname) > 255){
-                        exit('Last name is too long!');
+                        exit('<h2>Last name is too long!</h2>');
                     }
 
                     if(strlen($bio) > 5000){
-                        exit('Bio is too long!');
+                        exit('<h2>Bio is too long!</h2>');
                     }
 
                     if(strlen($kidfirstname) > 255){
-                        exit('Kid first name is too long!');
+                        exit('<h2>Kid first name is too long!</h2>');
                     }
 
                     if(strlen($kidlastname) > 255){
-                        exit('Kid last name is too long!');
+                        exit('<h2>Kid last name is too long!</h2>');
                     }
 
                     if(strlen($kidbio) > 5000){
-                        exit('Kid bio is too long!');
+                        exit('<h2>Kid bio is too long!</h2>');
                     }
 
                     if(!is_numeric($_POST['kidage'])){
-                        exit('Kid age is not a number!');
+                        exit('<h2>Kid age is not a number!</h2>');
                     }
 
                     //validate passwords match
                     if(strcmp($_POST['password'], $_POST['password2']) != 0){
-                        exit('The two passwords didn\'t match!');
+                        exit('<h2>The two passwords didn\'t match!</h2>');
                     }
 
                     //validate phone number
@@ -112,19 +112,19 @@ include 'global.php';
                         $phone = preg_replace("/^1/", '',$justNums);
                     }
                     if (strlen($phone) != 10) {
-                        exit('Invalid phone number!');
+                        exit('<h2>Invalid phone number!</h2>');
                     }
 
                     //validate email
                     $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
                     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                        exit('Invalid email!');
+                        exit('<h2>Invalid email!</h2>');
                     }
 
                     //connect to db
                     $conn = new mysqli($host, $user, $pass, $db);
                     if($conn->connect_error){
-                        die('<h1>Connection failed!</h1>');
+                        die('<h2>Connection failed!</h2>');
                     }
 
                     //find the date and time
@@ -142,7 +142,7 @@ include 'global.php';
                     $stmt->execute();
                     $stmt->store_result();
                     if($stmt->num_rows >= 1) {
-                        exit('<h1>Someone with that username, email, or phone already exists!</h1>');
+                        exit('<h2>Someone with that username, email, or phone already exists!</h2>');
                     }
                     $stmt->close();
 
@@ -156,7 +156,7 @@ include 'global.php';
                     $geoloc = json_decode(curl_exec($ch), true);
 
                     if(strcmp($geoloc['status'], 'ZERO_RESULTS')==0){
-                        exit('<h1>Invalid address!</h1>');
+                        exit('<h2>Invalid address!</h2>');
                     }
                     $formattedaddress = explode(",", $geoloc['results'][0]['formatted_address']);
                     $latitude = $geoloc['results'][0]['geometry']['location']['lat'];
@@ -193,19 +193,19 @@ include 'global.php';
                     //file verification
                     $check = getimagesize($_FILES["addressverification"]["tmp_name"]);
                     if($check == false) {
-                        echo "<h1>File is not an image.</h1>";
+                        echo "<h2>File is not an image.</h2>";
                         $uploadstatus = 0;
                     }
 
                     //file size verification
                     if ($_FILES["addressverification"]["size"] > 1048576) {
-                        echo "<h1>Sorry, your file is too large. It must be < 1 MB.</h1>";
+                        echo "<h2>Sorry, your file is too large. It must be < 1 MB.</h2>";
                         $uploadstatus = 0;
                     }
 
                     //extension verification
                     if($filetype != "jpg" && $filetype != "png" && $filetype != "jpeg" && $filetype != "JPG" && $filetype != "PNG" && $filetype != "JPEG") {
-                        echo "<h1>Sorry, only JPG, JPEG, PNG files are allowed.</h1>";
+                        echo "<h2>Sorry, only JPG, JPEG, PNG files are allowed.</h2>";
                         $uploadstatus = 0;
                     }
 
@@ -213,10 +213,10 @@ include 'global.php';
                         move_uploaded_file($_FILES["addressverification"]["tmp_name"], $filename);
                     }
                     else {
-                        exit('<h1>Please try again.</h1>');
+                        exit('<h2>Please try again.</h2>');
                     }
 
-                    echo '<h1>You have been registered! Please wait to be activated.</h1>';
+                    echo '<h2>You have been registered! Please wait to be activated.</h2>';
                 }
                 else {
                     //display registration form
